@@ -2,13 +2,14 @@
 <head>
 <title>Clipboard Test</title>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <script src="https://cdn.bootcss.com/clipboard.js/1.7.1/clipboard.min.js"></script>
 </head>
 <body>    
 <!-- Target -->
-<input id="target" value="ÄãÒª¸´ÖÆµÄÄÚÈİ">
+<input id="target" value="ä½ è¦å¤åˆ¶çš„å†…å®¹">
 <!-- Trigger -->
-<button class="btn" data-clipboard-target="#target">Ò»¼ü¸´ÖÆ</button>
+<button class="btn" data-clipboard-target="#target">ä¸€é”®å¤åˆ¶</button>
 <script>
   var clipboard = new Clipboard('.btn');
   clipboard.on('success', function(e) {     
