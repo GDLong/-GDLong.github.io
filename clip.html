@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>Clipboard Test</title>
+<meta charset="utf-8">
+<script src="https://cdn.bootcss.com/clipboard.js/1.7.1/clipboard.min.js"></script>
+</head>
+<body>    
+<!-- Target -->
+<input id="target" value="你要复制的内容">
+<!-- Trigger -->
+<button class="btn" data-clipboard-target="#target">一键复制</button>
+<script>
+  var clipboard = new Clipboard('.btn');
+  clipboard.on('success', function(e) {     
+    alert('Text:' + e.text);    
+    e.clearSelection();
+  });
+</script>
+</body>
+</html
