@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>产品发货</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="../../css/weui.min.css">
+	<link rel="stylesheet" href="../../css/jquery-weui.min.css">
+	<link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+	<div id="app" class="business-admin">
+		<section class="business-admin-waiting">
+			<a href="./business_waiting.html" class="weui-cell_access">
+				<div class="weui-flex">
+					<div class="business-admin-img">
+						<img src="../../images/001.png" alt="">
+					</div>
+					<div class="weui-flex__item">
+						<h4 class="business-admin-h4">待发货</h4>
+						<p class="business-admin-color"><span>Hello</span></p>
+						<p class="business-admin-text">我就坐等被认领！</p>
+						<p class="business-admin-padding">5</p>
+					</div>
+				</div>
+			</a>
+		</section>
+		<section class="business-admin-already">
+			<a href="./business_already.html" class="weui-cell_access">
+				<div class="weui-flex">
+					<div class="business-admin-img">
+						<img src="../../images/001.png" alt="">
+					</div>
+					<div class="weui-flex__item">
+						<h4 class="business-admin-h4">已发货</h4>
+						<p class="business-admin-color">勤劳的 <span>You</span></p>
+						<p class="business-admin-text">为我找到了新主人</p>
+					</div>
+				</div>
+			</a>
+		</section>
+		<section class="business-admin-artificial">
+			<a href="./business_artificial.html" class="weui-cell_access">
+				<div class="weui-flex">
+					<div class="business-admin-img">
+						<img src="../../images/001.png" alt="">
+					</div>
+					<div class="weui-flex__item">
+						<h4 class="business-admin-h4">人工发货</h4>
+						<p class="business-admin-color"><span>Wow</span> 就是喜欢你</p>
+						<p class="business-admin-text">工作的样子</p>
+					</div>
+				</div>
+			</a>
+		</section>
+	</div>
+	<script src="../../js/vue.min.js"></script>
+	<script src="../../js/jquery.min.js"></script>
+	<script src="../../js/jquery-weui.min.js"></script>
+	<script>
+	var vm = new Vue({
+		el:"#app",
+		data:{
+			message:"代理商-登录"
+		}
+	})
+	</script>
+</body>
+</html>

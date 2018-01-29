@@ -6,10 +6,11 @@
 <script src="https://cdn.bootcss.com/clipboard.js/1.7.1/clipboard.min.js"></script>
 </head>
 <body>    
-<!-- Target -->
-<span id="target">你看 你看 月亮的脸</span>
-<!-- Trigger -->
-<button class="btn" data-clipboard-target="#target">一键复制</button>
+<span id="one">你看 你看 月亮的脸</span>
+<button class="btn" data-clipboard-target="#one">一键复制</button><br><br>
+<!--  -->
+<span id="two">不看 不看 就是不看</span>
+<button class="btn" data-clipboard-target="#two">一键复制</button>
 <script>
   var clipboard = new Clipboard('.btn');
   clipboard.on('success', function(e) {     

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>人工发货</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="../../css/weui.min.css">
+	<link rel="stylesheet" href="../../css/jquery-weui.min.css">
+	<link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+	<div id="app">
+		<div class="wrap delivery_artificial">
+			<div class="weui-cells margin-top">
+			  <a class="weui-cell weui-cell_access" href="javascript:;">
+			    <div class="weui-cell__bd">
+			      <p>代理商</p>
+			    </div>
+			    <div class="weui-cell__ft">请选择代理商</div>
+			  </a>
+			  <a class="weui-cell weui-cell_access" href="javascript:;">
+			    <div class="weui-cell__bd">
+			      <p>发货方式</p>
+			    </div>
+			    <div class="weui-cell__ft">物流</div>
+			  </a>
+			  <a class="weui-cell weui-cell_access" href="javascript:;">
+			    <div class="weui-cell__bd">
+			      <p>物流公司</p>
+			    </div>
+			    <div class="weui-cell__ft">中通物流</div>
+			  </a>
+			  <div class="weui-cell">
+			    <div class="weui-cell__bd">
+			      <p>运单号</p>
+			    </div>
+			    <div class="weui-cell__ft">
+			    	<input class="weui-input" placeholder="请输入运单号">
+			    </div>
+			  </div>
+			  <a class="weui-cell weui-cell_access" href="javascript:;">
+			    <div class="weui-cell__bd">
+			      <p>收件地址</p>
+			    </div>
+			    <div class="weui-cell__ft">江苏省 无锡市 滨湖区</div>
+			  </a>
+			  <div class="weui-cell">
+	            <div class="weui-cell__bd">
+	              <p>收件人</p>
+	            </div>
+	            <div class="weui-cell__ft">
+	            	<input class="weui-input" placeholder="请输入收件人姓名">
+	            </div>
+	          </div>
+	          <div class="weui-cell">
+	            <div class="weui-cell__bd">
+	              <p>联系电话</p>
+	            </div>
+	            <div class="weui-cell__ft">
+	            	<input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入收件人电话">
+	            </div>
+	          </div>
+	          <div class="weui-cell">
+	            <div class="weui-cell__bd">
+	              <p>S/N号</p>
+	            </div>
+	            <div class="weui-cell__ft">
+	            	<input class="weui-input" placeholder="请输入S/N号">
+	            </div>
+	          </div>
+			</div>
+		<div class="delivery_artificial_btn">
+			<a href="javascript:;" class="weui-btn weui-btn_default">取消发布</a>
+			<a href="javascript:;" class="weui-btn weui-btn_warn">确认发布</a>
+		</div>
+	    </div>
+	</div>
+	<script src="../../js/vue.min.js"></script>
+	<script src="../../js/jquery.min.js"></script>
+	<script src="../../js/jquery-weui.min.js"></script>
+	<script>
+	var vm = new Vue({
+		el:"#app",
+		data:{
+			message:"代理商-登录"
+		}
+	})
+	</script>
+</body>
+</html>

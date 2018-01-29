@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>管理员</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="../../css/weui.min.css">
+	<link rel="stylesheet" href="../../css/jquery-weui.min.css">
+	<link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+	<div id="app">
+		<div class="index-top-red"></div>
+		<div class="wrap translateY">
+			<div class="index-header">
+				<div class="index-top-body">
+					<div class="index-top-portrait">
+						<img src="../../images/001.png">
+						<p>王梅</p>
+					</div>
+					<div class="weui-flex">
+					  <div class="weui-flex__item">
+						<p>管理角色</p>
+						<p>仓管</p>
+					  </div>
+					  <div class="weui-flex__item">
+						<p>会员号</p>	
+						<p>45762487</p>	
+					  </div>
+					</div>
+				</div>
+			</div>
+			<div class="index-body">
+				<div class="weui-panel weui-panel_access">
+				  <div class="weui-panel__hd">功能列表</div>
+				  <div class="weui-panel__bd">
+					<div class="">
+					  <a href="./index_userinfo.html" class="weui-grid-admin">
+					    <div class="weui-grid__admin">
+					      <img src="../../images/001.png" alt="">
+					    </div>
+					    <p class="weui-grid__title">
+					      个人信息
+					    </p>
+					  </a>
+					  <a href="./index_business.html" class="weui-grid-admin">
+					    <div class="weui-grid__admin">
+					      <img src="../../images/001.png" alt="">
+					    </div>
+					    <p class="weui-grid__title">
+					      产品发货
+					    </p>
+					  </a>
+					</div>
+				  </div>
+				</div>
+				<div class="weui-panel weui-panel_access">
+				  <div class="weui-panel__hd">精彩推荐</div>
+				  <div class="weui-panel__bd">
+					
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../../js/vue.min.js"></script>
+	<script src="../../js/jquery.min.js"></script>
+	<script src="../../js/jquery-weui.min.js"></script>
+	<script>
+	var vm = new Vue({
+		el:"#app",
+		data:{
+			message:"代理商-登录"
+		}
+	})
+	</script>
+</body>
+</html>

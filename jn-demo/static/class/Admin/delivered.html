@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>订单已发货</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="../../css/weui.min.css">
+	<link rel="stylesheet" href="../../css/jquery-weui.min.css">
+	<link rel="stylesheet" href="../../css/main.css">
+	<style type="text/css">
+		.orderStock-bg {
+		    background-color: #CD615C;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<div class="wrap">
+			<div class="orderStock-bg">
+				<div class="orderStock-animate">
+					<div class="orderStock-ico">
+						<span>已发货</span>
+					</div>
+					<i class="animate-round"></i>
+				</div>
+				<canvas id="canvas" width="300" height="150"></canvas>
+			</div>
+			<div class="weui-panel weui-panel_access business-list">
+			  <div class="weui-panel__bd">
+			    <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+			      <div class="weui-media-box__hd">
+			        <img class="weui-media-box__thumb" src="../../images/001.png">
+			      </div>
+			      <div class="weui-media-box__bd">
+			        <p class="weui-media-box__title">商品名称</p>
+			        <p class="weui-media-box__title">件数 2      ￥600</p>
+			      </div>
+			    </a>
+			  </div>
+			</div>
+	        <div class="weui-panel weui-panel_access business-list">
+			  <div class="weui-panel__hd">
+			  	<div class="weui-flex">
+			  		<div class="weui-flex__item">流水号：JN1991878</div>
+			  	</div>
+			  </div>
+			  <div class="weui-panel__bd">
+			    <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+			      <div class="weui-media-box__hd">
+			        <i class="weui-icon-download"></i>
+			      </div>
+			      <div class="weui-media-box__bd">
+			        <p class="weui-media-box__title">客户姓名：王梅</p>
+			        <p class="weui-media-box__title">发货方式：中通快递</p>
+			        <p class="weui-media-box__title">江苏省无锡市滨湖区中海小区25栋1103室<p>
+			      </div>
+			    </a>
+			  </div>
+			</div>
+			<div class="weui-panel weui-panel_access business-list">
+			  <div class="weui-panel__bd">
+			    <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+			      <div class="weui-media-box__hd">
+			        <i class="weui-icon-download"></i>
+			      </div>
+			      <div class="weui-media-box__bd">
+			        <p class="weui-media-box__title">销售时间：2017-12-12 11:11:11</p>
+			        <p class="weui-media-box__title">发货时间：2017-12-12 11:11:11</p>
+			      </div>
+			    </a>
+			  </div>
+			</div>
+			<div class="weui-panel weui-panel_access business-list">
+			  <div class="weui-panel__bd">
+			    <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg open-popup" data-target="#layer">
+			      <div class="weui-media-box__bd">
+			        <p class="weui-media-box__title">快递单号：23456754</p>
+			        <p class="weui-media-box__title">S/N号：34432443</p>
+			      </div>
+			      <div class="">一键查快递</div>
+			    </a>
+			  </div>
+			</div>
+		</div>
+		<div id="layer" class="weui-popup__container popup-bottom">
+		  <div class="weui-popup__overlay"></div>
+		  <div class="weui-popup__modal">
+	        <div class="toolbar">
+	          <div class="toolbar-inner">
+	            <a href="javascript:;" class="picker-button close-popup">关闭</a>
+	            <h1 class="title">运输中</h1>
+	          </div>
+	        </div>
+	        <div class="modal-content">
+	         	<div class="weui-panel__bd">
+				    <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+				      <div class="weui-media-box__hd">
+				        <img class="weui-media-box__thumb" src="../../images/001.png">
+				      </div>
+				      <div class="weui-media-box__bd">
+				        <p class="weui-media-box__title">商品名称</p>
+				        <p class="weui-media-box__title">快递单号：23432456432</p>
+				      </div>
+				    </a>
+				</div>
+				<div class="layer">
+					<ul class="time-vertical">
+				        <li>
+							<span>2018-01-01<br>12:30</span>
+							<i></i>
+							<span class="layer-text">物流信息</span>
+				        </li>
+				        <li>
+							<span>2018-01-01<br>12:30</span>
+							<i></i>
+							<span class="layer-text">物流信息</span>
+				        </li>
+				        <li>
+							<span>2018-01-01<br>12:30</span>
+							<i></i>
+							<span class="layer-text">物流信息</span>
+				        </li>
+				    </ul>
+				</div>
+	        </div>
+	      </div>
+		</div>
+	</div>
+	<script src="../../js/vue.min.js"></script>
+	<script src="../../js/jquery.min.js"></script>
+	<script src="../../js/jquery-weui.min.js"></script>
+	<script src="../../js/canvas.js"></script>
+	<script>
+	var vm = new Vue({
+		el:"#app",
+		data:{
+			message:"代理商-登录",
+			addressinfo:"太湖东路9号"
+		}
+	})
+	</script>
+</body>
+</html>

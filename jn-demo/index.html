@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>身份选择</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="./static/css/weui.min.css">
+	<link rel="stylesheet" href="./static/css/jquery-weui.min.css">
+	<style>
+		header{
+		    padding: 10vh 0;
+		    text-align: center;
+		}
+		header p:first-child{
+			font-size: 17px;
+			font-weight: bold;
+		}
+		.aa{
+			height: 70vh;
+    		text-align: center;
+		}
+		.aa > p{height: 5vh}
+		.aa > div{height: 65vh}
+		.admin,.agent{
+		    padding: 4vh;
+		    box-sizing: border-box;
+		    -moz-box-sizing: border-box;
+		    -webkit-box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<div class="wrap">
+			<header>
+				<p>当我识破了你的身份</p>
+				<p>让你工作速率飞起来</p>
+			</header>
+			<div class="aa">
+				<p>身份选择</p>
+				<div>
+					<div class="admin">
+						<a href="./static/class/Admin/login.html">
+							<img src="./static/images/001.png" alt="管理员">
+							<p>管理员</p>
+						</a>
+					</div>
+					<div class="agent">
+						<a href="./static/class/Agent/login.html">
+							<img src="./static/images/002.png" alt="代理商">
+							<p>代理商</p>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="./static/js/vue.min.js"></script>
+	<script src="./static/js/jquery.min.js"></script>
+	<script src="./static/js/jquery-weui.min.js"></script>
+	<script>
+	var vm = new Vue({
+		el:"#app",
+		data:{
+			message:"hello vue"
+		}
+	})
+	</script>
+</body>
+</html>

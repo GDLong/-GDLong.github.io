@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>代理商</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="../../css/weui.min.css">
+	<link rel="stylesheet" href="../../css/jquery-weui.min.css">
+	<link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+	<div id="app">
+		<div class="login">
+			<div class="user-header">
+				<header>
+					<p>认识独一无二的你</p>
+					<p>期待和你共享时光</p>
+				</header>
+				<div class="user-header-img">
+					<img src="../../images/002.png" alt="代理商">
+					<p>帐号登录</p>
+				</div>
+			</div>
+			<div class="user-input">
+				<div class="weui-cells">
+				  <div class="weui-cell">
+				    <div class="weui-cell__bd">
+				      <input class="weui-input" type="text" placeholder="请输入您的帐号">
+				    </div>
+				  </div>
+				  <div class="weui-cell">
+				    <div class="weui-cell__bd">
+				      <input class="weui-input" type="password" placeholder="请输入您的密码">
+				    </div>
+				  </div>
+				</div>
+			    <p class="weui-agree">
+			      <span class="weui-agree__text">
+			        <a href="./forgetPassword.html">忘记密码！</a>
+			      </span>
+			    </p>
+			    <div class="weui-btn-area">
+			      <a class="weui-btn weui-btn_primary" href="./index.html" id="showTooltips">立即登录</a>
+			    </div>
+			</div>
+		</div>
+	</div>
+	<script src="../../js/vue.min.js"></script>
+	<script src="../../js/jquery.min.js"></script>
+	<script src="../../js/jquery-weui.min.js"></script>
+	<script>
+	var vm = new Vue({
+		el:"#app",
+		data:{
+			message:"代理商-登录"
+		}
+	})
+	</script>
+</body>
+</html>
