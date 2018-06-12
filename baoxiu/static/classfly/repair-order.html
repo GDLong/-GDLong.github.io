@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>报修订单</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="../css/weui.min.css">
+	<link rel="stylesheet" href="../css/jquery-weui.min.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<style>
+		.weui-btn_primary {
+		    background-color: #29A9FF;
+		}
+		.flex-fix__item{
+			border: 1px solid #F89643;
+			color:#F89643;
+		    text-align: center;
+		    padding: 1px 10px;
+		    -webkit-border-radius: 3px;
+		    -moz-border-radius: 3px;
+		    border-radius: 3px;
+		    margin-right: 5px;
+		}
+		.flex-fix__ico{
+			width: 24px;
+		    height: 24px;
+		    line-height: 24px;
+		    text-align: center;
+		    color: #ffffff;
+		}
+		.ico-top{background-color: #E51C23}
+		.ico-middle{background-color:#FF9800}
+		.ico-bottom{background-color:#009688}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<div class="weui-tab">
+			<div class="weui-navTab">
+				<div class="weui-navbar">
+				  <div class="weui-navbar__item weui_bar__item_on">
+				    待受理
+				  </div>
+				  <div class="weui-navbar__item">
+				    已接受
+				  </div>
+				  <div class="weui-navbar__item">
+				    处理中
+				  </div>
+				  <div class="weui-navbar__item">
+				    已完成
+				  </div>
+				</div>
+			</div>
+	      	<div class="weui-tab__bd">
+				<div class="weui-panel weui-panel_access">
+				  <div class="weui-panel__hd weui-flex">
+				  	<div class="weui-flex__item">2018-02-11 17:09:23</div>
+				  	<div class="weui-flex">
+				  		<div class="flex-fix__item">
+				  			待受理
+				  		</div>
+				  		<div class="flex-fix__item">
+				  			待受理
+				  		</div>
+				  		<div class="flex-fix__ico ico-top">
+				  			高
+				  		</div>
+				  	</div>
+				  </div>
+				  <div class="weui-panel__bd">
+				    <a href="./repair-order-info.html" class="weui-media-box weui-media-box_appmsg">
+				      <div class="weui-media-box__bd">
+				        <h4 class="weui-media-box__title">实验楼三楼</h4>
+				        <p class="weui-media-box__desc">服务器无法开启</p>
+				      </div>
+				    </a>
+				  </div>
+				  <div class="weui-panel__ft">
+				    <div class="weui-cell weui-cell_link">
+				      <div class="weui-cell__bd">
+				      	<a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_primary">取消订单</a>
+				      </div>
+				      <span class="weui-cell__ft">预约时间：2018-02-11 17:09:23</span>
+				    </div>    
+				  </div>
+				</div>
+				<div class="weui-panel weui-panel_access">
+				  <div class="weui-panel__hd weui-flex">
+				  	<div class="weui-flex__item">2018-02-11 17:09:23</div>
+				  	<div class="weui-flex">
+				  		<div class="flex-fix__item">
+				  			待受理
+				  		</div>
+				  		<div class="flex-fix__ico ico-middle">
+				  			中
+				  		</div>
+				  	</div>
+				  </div>
+				  <div class="weui-panel__bd">
+				    <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+				      <div class="weui-media-box__bd">
+				        <h4 class="weui-media-box__title">实验楼三楼</h4>
+				        <p class="weui-media-box__desc">服务器无法开启</p>
+				      </div>
+				    </a>
+				  </div>
+				  <div class="weui-panel__ft">
+				    <div class="weui-cell weui-cell_link">
+				      <div class="weui-cell__bd">
+				      	<a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_primary">取消订单</a>
+				      </div>
+				      <span class="weui-cell__ft">预约时间：2018-02-11 17:09:23</span>
+				    </div>    
+				  </div>
+				</div>
+				<div class="weui-panel weui-panel_access">
+				  <div class="weui-panel__hd weui-flex">
+				  	<div class="weui-flex__item">2018-02-11 17:09:23</div>
+				  	<div class="weui-flex">
+				  		<div class="flex-fix__item">
+				  			待受理
+				  		</div>
+				  		<div class="flex-fix__ico ico-bottom">
+				  			低
+				  		</div>
+				  	</div>
+				  </div>
+				  <div class="weui-panel__bd">
+				    <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+				      <div class="weui-media-box__bd">
+				        <h4 class="weui-media-box__title">实验楼三楼</h4>
+				        <p class="weui-media-box__desc">服务器无法开启</p>
+				      </div>
+				    </a>
+				  </div>
+				  <div class="weui-panel__ft">
+				    <div class="weui-cell weui-cell_link">
+				      <div class="weui-cell__bd">
+				      	<a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_primary">取消订单</a>
+				      </div>
+				      <span class="weui-cell__ft">预约时间：2018-02-11 17:09:23</span>
+				    </div>    
+				  </div>
+				</div>
+	      	</div>
+
+	      	<!-- tabbar -->
+	      	<div class="weui-navTab">
+		      <div class="weui-tabbar">
+		        <a href="../../index.html" class="weui-tabbar__item">
+		          <div class="weui-tabbar__icon">
+		            <img src="http://jqweui.com/dist/demos/images/icon_nav_button.png" alt="">
+		          </div>
+		          <p class="weui-tabbar__label">我要报修</p>
+		        </a>
+		        <a href="javascript:;" class="weui-tabbar__item weui-bar__item--on">
+		          <div class="weui-tabbar__icon">
+		            <img src="http://jqweui.com/dist/demos/images/icon_nav_msg.png" alt="">
+		          </div>
+		          <p class="weui-tabbar__label">报修订单</p>
+		        </a>
+		        <a href="./user-center.html" class="weui-tabbar__item">
+		          <div class="weui-tabbar__icon">
+		            <img src="http://jqweui.com/dist/demos/images/icon_nav_cell.png" alt="">
+		          </div>
+		          <p class="weui-tabbar__label">个人中心</p>
+		        </a>
+		      </div>
+	      	</div>
+	    </div>
+	</div>
+	<script src="../js/vue.min.js"></script>
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/jquery-weui.min.js"></script>
+	<script>
+	var vm = new Vue({
+		el:"#app",
+		data:{
+			message:"hello vue"
+		}
+	})
+	</script>
+</body>
+</html>

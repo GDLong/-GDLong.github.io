@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>报修订单</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="../css/weui.min.css">
+	<link rel="stylesheet" href="../css/jquery-weui.min.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<style>
+		#tab2 .weui-media-box__hd{
+			height: 20px;
+			width: 20px
+		}
+		#tab2 .weui-media-box{padding: 10px 15px}
+		#tab2 .weui-media-box:before{
+			left: 50px
+		}
+		.steps{
+		    display: block;
+			background-color: #01C001;
+			width: 20px;
+		    height: 20px;
+		    border-radius: 50%;
+		}
+		.steps:before{
+		    content: " ";
+		    position: absolute;
+		    left: 24px;
+		    right: 0;
+		    height: 100%;
+		    width: 1px;
+		    border-left: 1px solid #01C001;
+		}
+		.weui-navbar{z-index: 10}
+		.weui-button_evaluation{
+			text-align: center;
+			padding: 0 30px;
+		}
+		.weui-evaluation-title {
+		    color: #333333;
+		    font-size: 19px;
+		    padding: 30px 40px 10px;
+		    text-align: center;
+		}
+		.weui-popup__modal{background: #ffffff}
+		.weui-button_eval__list{background-color: #EFEFF4;padding: 0 30px;    margin-top: 9px;}
+		.weui-popup__modal .modal-content{margin-bottom: -3rem;}
+		.weui-btn_primary {
+		    background-color: #29A9FF;
+		    width: 90%;
+		}
+		.weui-button_evaluation .on{position: relative;}
+		.weui-button_evaluation .on a{background-color: #F7B135;color: #ffffff}
+		.weui-button_evaluation .on::before{
+		    content: "";
+		    position: absolute;
+		    width: 0;
+		    height: 0;
+		    border-top: 10px solid transparent;
+		    border-right: 10px solid transparent;
+		    border-bottom: 10px solid #EFEFF4;
+		    border-left: 10px solid transparent;
+		    z-index: 9;
+		    left: 50%;
+		    margin-left: -10px;
+		    bottom: -10px;
+		}
+		.toolbar .picker-button{color: #29A9FF;}
+		.weui-btn_primary:not(.weui-btn_disabled):active {
+		    color: hsla(0,0%,100%,.6);
+		    background-color: #6cc1fb;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<div class="weui-tab">
+			<div class="weui-navTab">
+				<div class="weui-navbar">
+					<a class="weui-navbar__item weui-bar__item--on" href="#tab1">
+			          订单详情
+			        </a>
+			        <a class="weui-navbar__item" href="#tab2">
+			          订单进度
+			        </a>
+				</div>
+			</div>
+	      	<div class="weui-tab__bd">
+	      		<div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active">
+					<div class="weui-cells weui-cells_form">
+					  <div class="weui-cell">
+					    <div class="weui-cell__hd"><label class="weui-label">订单编号：</label></div>
+					    <div class="weui-cell__bd">
+					      <input class="weui-input" type="number" pattern="[0-9]*" placeholder="123456">
+					    </div>
+					  </div>
+					  <div class="weui-cell">
+					    <div class="weui-cell__hd"><label for="" class="weui-label">订单时间：</label></div>
+					    <div class="weui-cell__bd">
+					      <input class="weui-input" type="datetime-local" value="">
+					    </div>
+					  </div>
+					  <div class="weui-cell">
+					    <div class="weui-cell__hd"><label class="weui-label">优先级：</label></div>
+					    <div class="weui-cell__bd">
+					      <input class="weui-input" type="number" pattern="[0-9]*" placeholder="中">
+					    </div>
+					  </div>
+					  <div class="weui-cell">
+					    <div class="weui-cell__hd"><label for="" class="weui-label">预约时间：</label></div>
+					    <div class="weui-cell__bd">
+					      <input class="weui-input" type="datetime-local" value="" placeholder="">
+					    </div>
+					  </div>
+					  <div class="weui-cell">
+					    <div class="weui-cell__hd"><label class="weui-label">故障地点</label></div>
+					    <div class="weui-cell__bd">
+					      <input class="weui-input" type="number" placeholder="请输入故障地点">
+					    </div>
+					  </div>
+					</div>
+					<div class="weui-cells__title">故障描述</div>
+					<div class="weui-cells weui-cells_form">
+					  <div class="weui-cell">
+					    <div class="weui-cell__bd">
+					      <textarea class="weui-textarea" placeholder="描述故障现象" rows="3"></textarea>
+					      <div class="weui-textarea-counter"><span>0</span>/200</div>
+					    </div>
+					  </div>
+					</div>
+					<div class="weui-cells weui-cells_form">
+					  <div class="weui-cell">
+					    <div class="weui-cell__bd">
+					      <div class="weui-uploader">
+					        <div class="weui-uploader__hd">
+					          <p class="weui-uploader__title">附件：</p>
+					          <div class="weui-uploader__info">0/2</div>
+					        </div>
+					        <div class="weui-uploader__bd">
+					          <ul class="weui-uploader__files" id="uploaderFiles">
+					            <li class="weui-uploader__file" style="background-image:url(http://jqweui.com/dist/demos/images/pic_160.png)"></li>
+					            <li class="weui-uploader__file" style="background-image:url(http://jqweui.com/dist/demos/images/pic_160.png)"></li>
+					            <li class="weui-uploader__file" style="background-image:url(http://jqweui.com/dist/demos/images/pic_160.png)"></li>
+					        </div>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+					<div class="weui-cells__title">接单人：</div>
+					<div class="weui-cells">
+					  <div class="weui-cell">
+					    <div class="weui-cell__bd">
+					      	<p>姓名：谢永强</p>
+					    </div>
+					    <div class="weui-cell__bd">
+					    	<p>电话：123435432</p>
+					    </div>
+					    <div class="weui-cell__hd">
+					    	<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="" style="width:20px;margin-right:5px;display:block">
+					    </div>
+					  </div>
+					  <div class="weui-cell">
+					    <div class="weui-cell__bd">
+					      	<p>处理时间：2018-02-13 08:15</p>
+					    </div>
+					  </div>
+					  <div class="weui-cell">
+					    <div class="weui-cell__bd">
+					      	<p>完成时间：2018-02-13 08:15</p>
+					    </div>
+					  </div>
+					  <div class="weui-cell">
+					    <div class="weui-cell__bd">
+					      	<p>协同人：周杰伦</p>
+					    </div>
+					  </div>
+					</div>
+					<div class="weui-cells__title">安装系统：</div>
+					<div class="weui-cells">
+						<div class="weui-cell">
+						    <div class="weui-cell__bd">
+						      	<p>单价：100.00</p>
+						    </div>
+						    <div class="weui-cell__bd">
+						    	<p>数量：3</p>
+						    </div>
+						    <div class="weui-cell__hd">
+						    	<p>小计：300元</p>
+						    </div>
+						</div>
+					</div>
+					<div class="weui-cells__title">LED灯：</div>
+					<div class="weui-cells">
+						<div class="weui-cell">
+						    <div class="weui-cell__bd">
+						      	<p>单价：200.00</p>
+						    </div>
+						    <div class="weui-cell__bd">
+						    	<p>数量：2</p>
+						    </div>
+						    <div class="weui-cell__hd">
+						    	<p>小计：400元</p>
+						    </div>
+						</div>
+						<div class="weui-cell">
+						    <div class="weui-cell__bd"></div>
+						    <div class="weui-cell__bd"></div>
+						    <div class="weui-cell__hd">
+						    	<p>总计：400元</p>
+						    </div>
+						</div>
+					</div>
+					<div class="weui-cells__title"></div>
+					<a href="javascript:;"  data-target="#pop_evaluation" class="weui-btn weui-btn_primary open-popup">评价</a>
+					<div class="weui-cells__title"></div>
+		        </div>
+		        <div id="tab2" class="weui-tab__bd-item">
+		          <div class="weui-panel weui-panel_access">
+					  <!-- <div class="weui-panel__hd">订单进度已更新</div> -->
+					  <div class="weui-panel__bd">
+					    <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+					      <div class="weui-media-box__hd">
+					        <span class="steps"></span>
+					      </div>
+					      <div class="weui-media-box__bd">
+					        <h4 class="weui-media-box__title">订单已提交</h4>
+					        <p class="weui-media-box__desc">请耐心等待服务商接单</p>
+					      </div>
+					      <div class="weui-media-box__ft"> 
+					      	<p class="weui-media-box__desc">2018-01-01 00:00:00</p>
+					      </div>
+					    </a>
+					    <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+					      <div class="weui-media-box__hd">
+					        <span class="steps"></span>
+					      </div>
+					      <div class="weui-media-box__bd">
+					        <h4 class="weui-media-box__title">订单已提交</h4>
+					        <p class="weui-media-box__desc">请耐心等待服务商接单</p>
+					      </div>
+					      <div class="weui-media-box__ft"> 
+					      	<p class="weui-media-box__desc">2018-01-01 00:00:00</p>
+					      </div>
+					    </a>
+					  </div>
+					</div>
+		        </div>
+	      	</div>
+	    </div>
+	    <div id="pop_evaluation" class="weui-popup__container">
+		  <div class="weui-popup__overlay"></div>
+		  <div class="weui-popup__modal">
+		  	<div class="toolbar">
+	          <div class="toolbar-inner">
+	            <a href="javascript:;" class="picker-button close-popup">关闭</a>
+	            <h1 class="title">订单评价</h1>
+	          </div>
+	        </div>
+		    <div class="modal-content">
+		    	<div class="weui-evaluation-title">
+		    		为了使我们的服务工作做的更好，请求您如实评价我们的服务！
+		    	</div>
+	        	<div class="weui-loadmore weui-loadmore_line">
+				  <span class="weui-loadmore__tips">您对我们的服务满意吗？</span>
+				</div>
+				<div class="weui-flex weui-button_evaluation">
+					<div class="weui-flex__item">
+						<a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">满意</a>
+					</div>
+					<div class="weui-flex__item">
+						<a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">一般</a>
+					</div>
+					<div class="weui-flex__item on">
+						<a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">不满意</a>
+					</div>
+				</div>
+				<div class="weui-button_eval__list">
+					<a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">仪容仪表</a>
+					<a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">迟到早退</a>
+					<a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">用语不礼貌</a>
+					<a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">话多</a>
+					<a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default">其他</a>
+				</div>
+				<div class="weui-cells__title">备注：</div>
+				<div class="weui-cells weui-cells_form">
+				  <div class="weui-cell">
+				    <div class="weui-cell__bd">
+				      <textarea class="weui-textarea" placeholder="还想说点啥？写在这里吧！" rows="3"></textarea>
+				      <div class="weui-textarea-counter"><span>0</span>/200</div>
+				    </div>
+				  </div>
+				</div>
+	        </div>
+		    <a href="javascript:;"  class="weui-btn weui-btn_primary">立即评价</a>
+		  </div>
+		</div>
+	</div>
+	<script src="../js/vue.min.js"></script>
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/jquery-weui.min.js"></script>
+	<script>
+	var vm = new Vue({
+		el:"#app",
+		data:{
+			message:"hello vue"
+		}
+	})
+	</script>
+</body>
+</html>
